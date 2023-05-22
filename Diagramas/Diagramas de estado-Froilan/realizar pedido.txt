@@ -1,0 +1,11 @@
+stateDiagram realizar pedido
+    [*] --> Carrito
+    Carrito --> SeleccionandoProductos: Agregar productos al carrito
+    SeleccionandoProductos --> Carrito: Modificar productos en el carrito
+    SeleccionandoProductos --> SeleccionandoEnvio: Continuar al proceso de envío
+    SeleccionandoEnvio --> SeleccionandoProductos: Volver a seleccionar productos
+    SeleccionandoEnvio --> RealizandoPago: Continuar al proceso de pago
+    RealizandoPago --> SeleccionandoEnvio: Volver a seleccionar opciones de envío
+    RealizandoPago --> ConfirmandoPedido: Confirmar y realizar el pago
+    ConfirmandoPedido --> [*]: Pedido realizado con éxito
+    ConfirmandoPedido --> RealizandoPago: Cancelar el pedido

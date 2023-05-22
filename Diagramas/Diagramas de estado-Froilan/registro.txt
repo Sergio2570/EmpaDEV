@@ -1,0 +1,11 @@
+Diagrama de estado registro usuario
+stateDiagram-v2
+  [*] --> Ingreso_de_datos
+  Ingreso_de_datos --> Validación_de_datos
+   Validación_de_datos--> Verificación_de_disponibilidad
+Validación_de_datos-->Ingreso_de_datos
+  Verificación_de_disponibilidad-->Confirmación
+  Verificación_de_disponibilidad-->Ingreso_de_datos
+   Confirmación --> Confirmación
+   Confirmación --> Creación_de_cuenta
+  Creación_de_cuenta --> [*]
